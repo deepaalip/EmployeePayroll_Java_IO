@@ -3,6 +3,8 @@ package com.bridgelabz.employeepayroll;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.bridgelabz.employeepayroll.EmployeePayrollService.IOService;
+
 public class EmployeePayrollMain {
 	public static void main(String[] args) {
 		ArrayList<EmployeePayroll> employeePayrollList = new ArrayList<>();
@@ -11,6 +13,6 @@ public class EmployeePayrollMain {
 		
 		Scanner ConsoleInputReader = new Scanner(System.in);	
 		employPayrollService.readEmployeePayrollData(ConsoleInputReader);
-		employPayrollService.writeEmployeeData();
+		employPayrollService.writeEmployeeData(IOService.CONSOLE_IO);
 	}
 }

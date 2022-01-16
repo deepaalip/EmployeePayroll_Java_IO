@@ -27,7 +27,12 @@ public class EmployeePayrollService {
 		employeePayrollList.add(new EmployeePayroll(id, name, salary));
 	}
 
-	void writeEmployeeData() {
-		System.out.println("\n Writng Employee Payroll Roaster to Console \n" + employeePayrollList);
+	void writeEmployeeData(IOService ioService) {
+		if(ioService.equals(IOService.CONSOLE_IO))
+			System.out.println("\nWriting Employee Payroll Roster to Console\n" + employeePayrollList);
+		
+		else if(ioService.equals(IOService.FILE_IO))
+			new EmployeePayrollFileIOService().writeData(employeePayrollList);
 	}
+		
 }
